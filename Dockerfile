@@ -1,13 +1,10 @@
-FROM ubuntu:24.04
+FROM alpine:latest
 LABEL com.antonraharja.image.authors="araharja@protonmail.com"
 
-# Set environment variables
-ENV DEBIAN_FRONTEND=noninteractive
-
 # Install dependencies, prepare directories, and set up users in a single layer
-RUN apt-get -y update && apt-get -y upgrade && \
-    apt-get -yq install --no-install-recommends ca-certificates git unzip curl wget rsync openssh-client vim mc asterisk && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apk update && apk upgrade && \
+    apk add git unzip curl wget rsync openssh-client vim mc \
+    asterisk asterisk-sample-config asterisk-sounds-en asterisk-sounds-moh asterisk-srtp
 
 COPY ./asterisk/run.sh /run.sh
 COPY ./asterisk/setup.sh /setup.sh

@@ -1,5 +1,5 @@
-#!/bin/bash
+#!/bin/ash
 
-echo "Ubuntu 24.04 Asterisk IPPBX"
+echo "Asterisk IPPBX"
 
 exec /daemon.sh

@@ -4,11 +4,11 @@ docker-asterisk
 Item            | Info
 --------------- | ---------------
 Project update  | 250415
-Project version | 1.0
-Distro          | Ubuntu 24.04
-Asterisk        | 20.6.0
+Project version | 1.1
+Distro          | Alpine latest
+Asterisk        | 20
 
-This project is about docker for Asterisk on Ubuntu 24.04
+This project is about docker for Asterisk on Alpine latest version.
 
 Visit [docker hub](https://hub.docker.com/r/antonraharja/asterisk) page for more information.
 

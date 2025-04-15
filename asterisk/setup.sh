@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 mkdir -p /opt/asterisk
 rm -rf /opt/asterisk/*
@@ -17,11 +17,3 @@ mkdir -p /opt/asterisk/log
 rsync -az /var/log/asterisk/ /opt/asterisk/log/
 rm -rf /var/log/asterisk
 ln -s /opt/asterisk/log /var/log/asterisk
-
-rm -f /usr/share/asterisk/sounds/custom
-ln -s /usr/local/share/asterisk/sounds /usr/share/asterisk/sounds/custom
-
-mkdir -p /opt/asterisk/share
-rsync -az /usr/share/asterisk/ /opt/asterisk/share/
-rm -rf /usr/share/asterisk
-ln -s /opt/asterisk/share /usr/share/asterisk
