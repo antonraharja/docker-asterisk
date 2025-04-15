@@ -1,0 +1,25 @@
+services:
+  asterisk:
+    image: antonraharja/asterisk:base
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "5060:5060"
+      - "4569:4569"
+    networks:
+      - asterisk-network
+    volumes:
+      - ./volume-asterisk:/opt/asterisk
+    deploy:
+      resources:
+        limits:
+          cpus: '1.25'
+          memory: 1G
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+
+networks:
+  asterisk-network:
+    driver: bridge
+
