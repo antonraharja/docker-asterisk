@@ -1,6 +1,6 @@
 services:
   asterisk:
-    image: antonraharja/asterisk:base
+    image: antonraharja/asterisk:latest
     build:
       dockerfile: Dockerfile
     ports:
@@ -22,4 +22,3 @@ services:
 networks:
   asterisk-network:
     driver: bridge
-
